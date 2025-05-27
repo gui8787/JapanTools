@@ -6,8 +6,41 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		45EDF0942DE60FD4004AC9F8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EDF0932DE60FD4004AC9F8 /* WidgetKit.framework */; };
+		45EDF0962DE60FD4004AC9F8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EDF0952DE60FD4004AC9F8 /* SwiftUI.framework */; };
+		45EDF0A42DE60FD7004AC9F8 /* Ryo-GaeExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 45EDF0912DE60FD4004AC9F8 /* Ryo-GaeExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45EDF0A22DE60FD7004AC9F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45EDF06D2DE60F3A004AC9F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45EDF0902DE60FD4004AC9F8;
+			remoteInfo = "Ryo-GaeExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		45EDF0A92DE60FD7004AC9F8 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				45EDF0A42DE60FD7004AC9F8 /* Ryo-GaeExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		45EDF0752DE60F3A004AC9F8 /* JapanTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JapanTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45EDF0912DE60FD4004AC9F8 /* Ryo-GaeExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ryo-GaeExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45EDF0932DE60FD4004AC9F8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		45EDF0952DE60FD4004AC9F8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -17,6 +50,13 @@
 				Info.plist,
 			);
 			target = 45EDF0742DE60F3A004AC9F8 /* JapanTools */;
+		};
+		45EDF0A82DE60FD7004AC9F8 /* Exceptions for "Ryo-Gae" folder in "Ryo-GaeExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 45EDF0902DE60FD4004AC9F8 /* Ryo-GaeExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -29,6 +69,14 @@
 			path = JapanTools;
 			sourceTree = "<group>";
 		};
+		45EDF0972DE60FD4004AC9F8 /* Ryo-Gae */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				45EDF0A82DE60FD7004AC9F8 /* Exceptions for "Ryo-Gae" folder in "Ryo-GaeExtension" target */,
+			);
+			path = "Ryo-Gae";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +87,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45EDF08E2DE60FD4004AC9F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45EDF0962DE60FD4004AC9F8 /* SwiftUI.framework in Frameworks */,
+				45EDF0942DE60FD4004AC9F8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				45EDF0772DE60F3A004AC9F8 /* JapanTools */,
+				45EDF0972DE60FD4004AC9F8 /* Ryo-Gae */,
+				45EDF0922DE60FD4004AC9F8 /* Frameworks */,
 				45EDF0762DE60F3A004AC9F8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,8 +113,18 @@
 			isa = PBXGroup;
 			children = (
 				45EDF0752DE60F3A004AC9F8 /* JapanTools.app */,
+				45EDF0912DE60FD4004AC9F8 /* Ryo-GaeExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		45EDF0922DE60FD4004AC9F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45EDF0932DE60FD4004AC9F8 /* WidgetKit.framework */,
+				45EDF0952DE60FD4004AC9F8 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,10 +137,12 @@
 				45EDF0712DE60F3A004AC9F8 /* Sources */,
 				45EDF0722DE60F3A004AC9F8 /* Frameworks */,
 				45EDF0732DE60F3A004AC9F8 /* Resources */,
+				45EDF0A92DE60FD7004AC9F8 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				45EDF0A32DE60FD7004AC9F8 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				45EDF0772DE60F3A004AC9F8 /* JapanTools */,
@@ -82,6 +153,28 @@
 			productName = JapanTools;
 			productReference = 45EDF0752DE60F3A004AC9F8 /* JapanTools.app */;
 			productType = "com.apple.product-type.application";
+		};
+		45EDF0902DE60FD4004AC9F8 /* Ryo-GaeExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45EDF0A52DE60FD7004AC9F8 /* Build configuration list for PBXNativeTarget "Ryo-GaeExtension" */;
+			buildPhases = (
+				45EDF08D2DE60FD4004AC9F8 /* Sources */,
+				45EDF08E2DE60FD4004AC9F8 /* Frameworks */,
+				45EDF08F2DE60FD4004AC9F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				45EDF0972DE60FD4004AC9F8 /* Ryo-Gae */,
+			);
+			name = "Ryo-GaeExtension";
+			packageProductDependencies = (
+			);
+			productName = "Ryo-GaeExtension";
+			productReference = 45EDF0912DE60FD4004AC9F8 /* Ryo-GaeExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +187,9 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					45EDF0742DE60F3A004AC9F8 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					45EDF0902DE60FD4004AC9F8 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -113,12 +209,20 @@
 			projectRoot = "";
 			targets = (
 				45EDF0742DE60F3A004AC9F8 /* JapanTools */,
+				45EDF0902DE60FD4004AC9F8 /* Ryo-GaeExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		45EDF0732DE60F3A004AC9F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45EDF08F2DE60FD4004AC9F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +239,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45EDF08D2DE60FD4004AC9F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45EDF0A32DE60FD7004AC9F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45EDF0902DE60FD4004AC9F8 /* Ryo-GaeExtension */;
+			targetProxy = 45EDF0A22DE60FD7004AC9F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		45EDF0892DE60F3D004AC9F8 /* Debug */ = {
@@ -313,6 +432,84 @@
 			};
 			name = Release;
 		};
+		45EDF0A62DE60FD7004AC9F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Ryo-Gae/Ryo_Gae.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5Q728EWWW8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ryo-Gae/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Ryo-Gae";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guilhermepereira.JapanTools.Ryo-Gae";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		45EDF0A72DE60FD7004AC9F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Ryo-Gae/Ryo_Gae.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5Q728EWWW8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ryo-Gae/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Ryo-Gae";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guilhermepereira.JapanTools.Ryo-Gae";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -330,6 +527,15 @@
 			buildConfigurations = (
 				45EDF0892DE60F3D004AC9F8 /* Debug */,
 				45EDF08A2DE60F3D004AC9F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45EDF0A52DE60FD7004AC9F8 /* Build configuration list for PBXNativeTarget "Ryo-GaeExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45EDF0A62DE60FD7004AC9F8 /* Debug */,
+				45EDF0A72DE60FD7004AC9F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
