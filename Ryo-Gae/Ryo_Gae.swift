@@ -207,6 +207,9 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct Ryo_GaeEntryView : View {
+    let startColor = Color(red: 0.1, green: 0.2, blue: 0.4)
+    let endColor = Color(red: 0.05, green: 0.1, blue: 0.3)
+    
     var entry: Provider.Entry
 
     var body: some View {
@@ -221,16 +224,15 @@ struct Ryo_GaeEntryView : View {
                     .lineLimit(2) // Allow up to 2 lines for the error message
             } else {
                 HStack {
-                    Text(entry.baseCurrency ?? "USD") // Default to USD if baseCurrency is nil
+                    Text(entry.baseCurrency ?? "USD")
                         .font(.subheadline.weight(.semibold))
                     Spacer()
-                    // You can still display the emoji from your AppIntent if you wish
                     Text("💱")
                         .font(.title)
                 }
                 .padding(.bottom, 4)
                 
-                Divider()
+                Divider().overlay(Color.gray)
                 
                 RateView(currencySymbol: "🇧🇷", currencyCode: "BRL", rate: entry.brlRate)
                 RateView(currencySymbol: "🇯🇵", currencyCode: "JPY", rate: entry.jpyRate)
@@ -240,15 +242,22 @@ struct Ryo_GaeEntryView : View {
                 if let lastUpdate = entry.lastUpdate {
                     Text("Updated: \(lastUpdate, style: .time)")
                         .font(.caption2)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Color.white.opacity(0.9))
                 } else {
                     Text("Updating...")
                         .font(.caption2)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Color.white.opacity(0.9))
                 }
             }
         }
-        .containerBackground(.fill.tertiary, for: .widget) // Keep existing background
+        .foregroundColor(.white) // Default text color for the content
+        .containerBackground(for: .widget) {
+            LinearGradient(
+                gradient: Gradient(colors: [startColor, endColor]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        }
     }
 }
 
@@ -278,7 +287,7 @@ struct Ryo_Gae: Widget {
         }
         .configurationDisplayName("Ryo-Gae") // You can update this
         .description("View live currency exchange rates.") // Update description
-        .supportedFamilies([.systemSmall]) // Add more if you design for them
+        .supportedFamilies([.systemSmall, .systemMedium]) // Add more if you design for them
     }
 }
 
@@ -288,7 +297,7 @@ struct Ryo_Gae: Widget {
 // and accessible to the preview.
 // Assuming ConfigurationAppIntent.smiley and .starEyes are available:
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemMedium) {
     Ryo_Gae()
 } timeline: {
     SimpleEntry(date: .now, baseCurrency: "USD", brlRate: 5.10, jpyRate: 157.50, lastUpdate: .now, errorMessage: nil)
